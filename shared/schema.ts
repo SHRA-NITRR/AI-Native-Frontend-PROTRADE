@@ -1,9 +1,4 @@
-import { pgTable, serial, text } from "drizzle-orm/pg-core";
 import { z } from "zod";
-
-export const dummy = pgTable("dummy", {
-  id: serial("id").primaryKey(),
-});
 
 export const tickerSchema = z.enum(["BTC", "ETH", "SOL"]);
 export type Ticker = z.infer<typeof tickerSchema>;
